@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../modal/planets_model.dart';
 
@@ -11,6 +12,7 @@ class HomeController extends ChangeNotifier {
 
   HomeController() {
     getData();
+    getShareData();
   }
 
   List<PlanetsModel> favoritePlanetsList = [];
@@ -48,6 +50,46 @@ class HomeController extends ChangeNotifier {
       favoritePlanetsList.remove(planetsList[planetsIndex]);
       notifyListeners();
     }
+    setShareData();
+    print(favoritePlanetsList.length);
+    notifyListeners();
+  }
+
+  void removeFavoritePlanets(int index)
+  {
+    for (int i = 0; i < 9; i++) {
+      if(favoritePlanetsList[index].name==planetsList[i].name)
+        {
+          planetsList[planetsIndex].like = !planetsList[planetsIndex].like;
+          favoritePlanetsList.removeAt(index);
+          notifyListeners();
+        }
+    }
+    setShareData();
+    notifyListeners();
+  }
+
+  Future<void> setShareData() async {
+    SharedPreferences preferencesLike = await SharedPreferences.getInstance();
+    for (int i = 0; i < 9; i++) {
+      preferencesLike.setBool('like$i', planetsList[i].like);
+      notifyListeners();
+    }
+    // favoritePlanetsList.clear();
+    notifyListeners();
+  }
+
+  Future<void> getShareData() async {
+    SharedPreferences preferencesLike = await SharedPreferences.getInstance();
+    for (int i = 0; i < 9; i++) {
+      planetsList[i].like = preferencesLike.getBool('like$i') ?? false;
+      notifyListeners();
+      if (planetsList[i].like) {
+        favoritePlanetsList.add(planetsList[planetsIndex]);
+        notifyListeners();
+      }
+    }
+    setShareData();
     print(favoritePlanetsList.length);
     notifyListeners();
   }
