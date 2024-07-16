@@ -60,7 +60,7 @@ class HomeController extends ChangeNotifier {
     for (int i = 0; i < 9; i++) {
       if(favoritePlanetsList[index].name==planetsList[i].name)
         {
-          planetsList[planetsIndex].like = !planetsList[planetsIndex].like;
+          planetsList[i].like = !planetsList[i].like;
           favoritePlanetsList.removeAt(index);
           notifyListeners();
         }
@@ -85,7 +85,7 @@ class HomeController extends ChangeNotifier {
       planetsList[i].like = preferencesLike.getBool('like$i') ?? false;
       notifyListeners();
       if (planetsList[i].like) {
-        favoritePlanetsList.add(planetsList[planetsIndex]);
+        favoritePlanetsList.add(planetsList[i]);
         notifyListeners();
       }
     }

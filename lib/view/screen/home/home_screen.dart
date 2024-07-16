@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:bottom_bar_matu/bottom_bar_matu.dart';
 import 'package:flutter/material.dart';
@@ -543,25 +542,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           ),
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   selectedItemColor: Colors.white,
-      //   unselectedItemColor: const Color(0xff696969),
-      //   backgroundColor: const Color(0xff161616),
-      //   showSelectedLabels: false,
-      //   currentIndex: homeControllerTrue.bottomIndex,
-      //   onTap: (value) {
-      //     homeControllerFalse.changeBottomIndex(value);
-      //   },
-      //   items: const [
-      //     BottomNavigationBarItem(
-      //         backgroundColor: Color(0xff161616),
-      //         icon: Icon(Icons.home),
-      //         label: ''),
-      //     BottomNavigationBarItem(icon: Icon(Icons.dataset), label: ''),
-      //     BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: ''),
-      //     BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
-      //   ],
-      // ),
+
       bottomNavigationBar: BottomBarBubble(
         backgroundColor: const Color(0xff161616),
         color: Colors.white,
