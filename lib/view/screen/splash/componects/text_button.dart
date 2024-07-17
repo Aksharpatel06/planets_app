@@ -13,7 +13,7 @@ Padding introTextAndButton(BuildContext context) {
         Text(
           'Explore the Universe',
           style: GoogleFonts.inter(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 42),
+              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 38),
         ),
         const SizedBox(
           height: 5,
@@ -24,13 +24,14 @@ Padding introTextAndButton(BuildContext context) {
               color: Colors.white, fontWeight: FontWeight.w300, fontSize: 18),
         ),
         const SizedBox(
-          height: 30,
+          height: 25,
         ),
         GestureDetector(
           onTap: () {
             Navigator.pushReplacement(
                 context,
                 PageTransition(
+                  duration: const Duration(milliseconds: 500),
                     child: const HomeScreen(),
                     type: PageTransitionType.bottomToTop));
           },
