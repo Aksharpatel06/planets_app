@@ -83,3 +83,9 @@ Create a dedicated screen for each planet displaying detailed information, image
 ### Video
 
 https://github.com/user-attachments/assets/59d15bea-b706-422e-b9b7-bda1d2fcca07
+
+
+
+https://github.com/user-attachments/assets/d39654f9-9bad-4490-853b-387027253d06
+
+
