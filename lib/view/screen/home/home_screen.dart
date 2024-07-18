@@ -1,8 +1,6 @@
 import 'package:babylonjs_viewer/babylonjs_viewer.dart';
 import 'package:bottom_bar_matu/bottom_bar_matu.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:planets_app/utils/global_variable.dart';
 import 'package:planets_app/view/controller/home_controller.dart';
 import 'package:provider/provider.dart';
 
