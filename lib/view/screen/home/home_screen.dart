@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 
 import 'componects/articles_planets.dart';
 import 'componects/favorite_list_planets.dart';
+import 'componects/image_planet.dart';
 import 'componects/name_of_planets.dart';
 import 'componects/next_screen_button.dart';
 import 'componects/planets_details_card.dart';
@@ -70,14 +71,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     children: [
                                       planetsDetailsCard(
                                           homeControllerTrue, index),
-                                      Positioned(
-                                        right: 80,
-                                        child: BabylonJSViewer(
-                                          src: homeControllerTrue
-                                              .planetsList[index].img,
-                                        ),
-                                      ),
-                                      // imagePlanet(homeControllerTrue, index),
+                                       imagePlanet(homeControllerTrue, index,animationController),
                                       nextButton(homeControllerFalse, index,
                                           context, homeControllerTrue),
                                     ],

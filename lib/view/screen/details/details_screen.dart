@@ -1,3 +1,4 @@
+import 'package:babylonjs_viewer/babylonjs_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:planets_app/view/controller/home_controller.dart';
@@ -50,12 +51,21 @@ class DetailsScreen extends StatelessWidget {
                     child: Center(
                       child: Hero(
                         tag: 'box',
-                        child: Image.asset(
-                          homeControllerTrue
-                              .planetsList[homeControllerTrue.planetsIndex]
-                              .image,
-                          fit: BoxFit.cover,
+                        // child: Image.asset(
+                        //   homeControllerTrue
+                        //       .planetsList[homeControllerTrue.planetsIndex]
+                        //       .image,
+                        //   fit: BoxFit.cover,
+                        // ),
+                        child: SizedBox(
+                          height: 500,
+                          width: 500,
+                          child: BabylonJSViewer(
+                            src: homeControllerTrue
+                                .planetsList[homeControllerTrue.planetsIndex].img,
+                          ),
                         ),
+                        //,
                       ),
                     ),
                   ),
